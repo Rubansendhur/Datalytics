@@ -1,0 +1,106 @@
+
+<div *ngIf="loading" class="loading-container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+
+  
+
+
+  
+ 
+</div>
+<div *ngIf="!loading">
+<header>
+  <div class="text-content">
+    <h1>We’re a Passionate Team of Datalytics Club at Coimbatore Institute of Technology</h1>
+    <h3>Our objective is to enlighten students with key data science skills and bridge the gap between industry and academia.</h3>
+    <h4>"Information is the oil of the 21st century, and analytics is the combustion engine."</h4>
+  </div>
+  <img src="https://wallpapercave.com/wp/wp10207898.jpg" alt="Datalytics Club Banner">
+</header>
+
+<main>
+  <section>
+    <h2>VISION</h2>
+    <p>Our vision is to provide knowledge on data analytics to students, enabling them to become efficient data analysts, data scientists, and decision-makers.</p>
+  </section>
+  <section>
+    <h2>MISSION</h2>
+    <p>Our mission is to provide students with opportunities to learn concepts that address real-world problems across domains. We focus on building an active community of students and faculty members passionate about data analytics.</p>
+  </section>
+</main>
+
+<div class="advisor-section">
+  <div class="advisor-text">
+    <h1>Staff Advisors</h1>
+    <h4>
+      The club is guided by two dedicated staff advisors from the<br> Department of Computing at Coimbatore Institute of Technology.<br> They mentor members in leadership, teamwork, and communication, fostering both personal and professional growth.
+      
+      <br>Their support ensures the club aligns with<br> college policies while encouraging innovation and collaboration.<br> With their guidance, members gain valuable insights and opportunities to learn and excel as a team.
+    </h4>
+  </div>
+  <div class="advisor-cards">
+    <div class="advisor-card">
+      <img src="srividhya.jpg" alt="Advisor 1">
+      <h3>Dr.M.Srividya</h3>
+      <p>Email: srividhya&#64;cit.edu.in</p>
+      <p>M.Sc Data Science</p>
+      <div id="linkedin-button-container">
+        <!-- Smaller Image Button -->
+        <a href="https://i.ibb.co/vHVYmYd/9ad30e07f2bd.png">
+          <button id="linkedin-button">
+            <img src="download.png" alt="LinkedIn Button" id="linkedin-image" />
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="advisor-card">
+      <img src="chandia..jpg" alt="Advisor 2">
+      <h3>Dr.S.Chandia</h3>
+      <p>Email: schandia&#64;cit.edu.in</p>
+      <p>M.Sc Decision and Computing Sciences</p>
+      <div id="linkedin-button-container">
+        <!-- Smaller Image Button -->
+        <a href="https://www.linkedin.com/in/chandia-s-a462701aa/">
+          <button id="linkedin-button">
+            <img src="download.png" alt="LinkedIn Button" id="linkedin-image" />
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- gallery.component.html -->
+<!-- gallery.component.html -->
+<div class="gallery">
+  <h1>Image Gallery</h1>
+  <div class="gallery-container">
+    <div class="gallery-wrapper">
+      <!-- Loop through the imageUrls array and display each image -->
+      <div *ngFor="let url of imageUrls" class="gallery-item">
+        <img [src]="url" alt="Gallery Image" />
+      </div>
+    </div>
+  </div>
+  <!-- Left and Right Navigation Buttons -->
+  <button class="prev" (click)="moveGallery('left')">❮</button>
+  <button class="next" (click)="moveGallery('right')">❯</button>
+</div>
+
+
+
+
+<div class="total-events">
+  <img src="events.jpg" >
+      
+  <h2>Total Events: {{ totalEvents }}</h2>
+  <button (click)="downloadExcel()">Download All Events as Excel</button>
+</div>
+</div>

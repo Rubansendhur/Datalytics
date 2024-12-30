@@ -1,0 +1,19 @@
+/* Link styles */
+.linkedin-button-link {
+    text-decoration: none;
+  }
+  
+  /* Button styles */
+  .linkedin-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  /* Image styles */
+  .linkedin-image {
+    width: 50px;  /* Smaller size */
+    height: auto;  /* Maintain aspect ratio */
+  }
+  

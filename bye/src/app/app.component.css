@@ -1,0 +1,17 @@
+/* Add these styles to your global CSS or specific component CSS */
+router-outlet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;   /* Full width of the parent container */
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    router-outlet {
+      height: auto; /* On smaller screens, height can adjust based on content */
+      padding: 20px; /* Add some padding for mobile screens */
+    }
+  }
+  

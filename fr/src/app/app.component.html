@@ -1,0 +1,107 @@
+
+<div *ngIf="!loading">
+
+  <header class="header">
+    <div class="logo">
+      <button (click)="navigateTohome()"><img src="favicon.ico" alt="Datalytics Club Logo"></button>
+    </div>
+    
+    <nav class="nav" id="mobile-menu">
+      <!-- Hamburger Button -->
+      <button class="hamburger" (click)="toggleMenu()">
+        &#9776;
+      </button>
+    
+      <!-- Menu -->
+      <ul [ngClass]="{'open': isMenuOpen}" class="nav-list">
+        <li><b><a (click)="navigateTohome()" fragment="home">Home</a></b></li>
+        <li><b><a (click)="navigateToaboutus()">About Us</a></b></li>
+        <li><b><a (click)="navigateToevents()" fragment="events">Events</a></b></li>
+        <li><b><a (click)="navigateTocontact()" fragment="team">Team</a></b></li>
+        <li><b><a (click)="navigateTocontactus()" fragment="contact-us">Contact Us</a></b></li>
+      </ul>
+    </nav>
+    
+    
+    
+  </header>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  
+<footer class="footer">
+  <button (click)="navigateTohome()"><img src="favicon.ico" alt="Datalytics Club Logo"></button>
+   
+  <div class="footer-container">
+    
+    <!-- Logo and About Section -->
+    
+
+    <!-- Who We Are Section -->
+   
+
+    <!-- Quick Links Section -->
+    <div class="footer-links">
+      <h3>Site Maps</h3>
+      <ul>
+        <li><a (click)="navigateTohome()">Home</a></li>
+        <li><a (click)="navigateToaboutus()">About Us</a></li>
+        <li><a (click)="navigateToevents()">Events</a></li>
+        <li><a (click)="navigateTocontact()">Team</a></li>
+        <li><a (click)="navigateTocontactus()">Contact Us</a></li>
+         
+      </ul>
+    </div>
+
+    <div class="contact-section">
+      <h2>Contact</h2>
+      <address>
+        <p>Department of Computing,</p>
+        <p>Computing Block,</p>
+        <p>Coimbatore Institute of Technology,</p>
+        <p>Avinashi Road, Civil Aerodrome Post,</p>
+
+        <p> Peelamedu, Coimbatore,</p>
+        <p>Tamil Nadu 641014</p>
+      </address>
+      <div class="contact-email">
+        <p>Email: <a href="mailto:datalyticscit@gmail.com">datalyticscit&#64;gmail.com</a></p>
+      
+      </div>
+    </div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+    <!-- Get in Touch Section -->
+    <div class="footer-contact">
+      <h3>Get in Touch</h3>
+      <p>Phone: <a href="tel:+918610098083">+91 8610098083</a></p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@datalyticscit8122" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/datalyticscit/?originalSubdomain=in" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/datalytics.cit/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  
+    <div class="footer-contributors">
+      <h3>Contributors</h3>
+      <ul>
+        <li>M.Sc Decision and Computing Sciences</li>
+        <li>Batch (2022-2027)</li>
+      </ul>
+    </div>
+    
+  </div>
+
+</footer>
+<footer class="footer1">
+  <div class="footer-content">
+    <p>&copy; 2024 Datalytics Club. All rights reserved.</p>
+      </div>
+</footer>

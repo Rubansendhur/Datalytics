@@ -1,0 +1,70 @@
+<div *ngIf="eventsLoaded; else loading">
+  <h1>Events List</h1>
+  <button (click)="navigateToDashboard()">Go to Dashboard</button>
+  <button (click)="downloadExcel()">Download All Events as Excel</button>
+  
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  <!-- Year Selector -->
+  <div class="year-selector">
+    <label for="yearRange">Select Year:</label>
+    <select id="yearRange" [(ngModel)]="selectedYear" (change)="filterEventsByYear()">
+      <option value="">All Years</option>
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+
+  <!-- Display filtered events -->
+  <div *ngIf="filteredEvents.length > 0; else noEvents">
+    <div *ngFor="let event of filteredEvents; trackBy: trackByEventId" class="event-card" (click)="viewEventDetails(event._id)">
+      <h3>{{ event.event_name }}</h3>
+      <p><strong>ID:</strong> {{ event._id }}</p>
+      <p><strong>Description:</strong> {{ event.description }}</p>
+      <p><strong>Event Time:</strong> {{ event.event_time | date: 'short' }}</p>
+      <p><strong>Event Location:</strong> {{ event.event_location }}</p>
+      <div *ngIf="event.image_url">
+        <img [src]="event.image_url" alt="{{ event.event_name }}" class="event-image" />
+      </div>
+      <button (click)="deleteEvent(event._id)">Delete</button>
+      <button (click)="editEvent(event._id)">Edit</button>
+    </div>
+  </div>
+
+  <!-- Conditional Download Button for Selected Year -->
+  <div class="year-download-button" *ngIf="selectedYear">
+    <h2>Download Events for {{ selectedYear }}</h2>
+    <button (click)="downloadEventsByYear(selectedYear)">Download Events for {{ selectedYear }}</button>
+  </div>
+
+  <div *ngIf="selectedEvent">
+    <h2>Edit Event</h2>
+    <form (ngSubmit)="updateEvent()">
+      <div>
+        <label>Event Name:</label>
+        <input [(ngModel)]="selectedEvent.event_name" name="event_name" required />
+      </div>
+      <div>
+        <label>Description:</label>
+        <textarea [(ngModel)]="selectedEvent.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label>Event Time:</label>
+        <input type="datetime-local" [(ngModel)]="selectedEvent.event_time" name="event_time" required />
+      </div>
+      <div>
+        <label>Event Location:</label>
+        <input [(ngModel)]="selectedEvent.event_location" name="event_location" required />
+      </div>
+      <button type="submit">Update Event</button>
+      <button type="button" (click)="selectedEvent = null">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading events...</p>
+</ng-template>
+
+<ng-template #noEvents>
+  <p>No events available for the selected year.</p>
+</ng-template>

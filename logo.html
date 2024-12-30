@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Launch with Fire Effect</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #01070a; /* Dark background to enhance effects */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .scene {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .rocket {
+            position: relative;
+            animation: shake 0.5s infinite, moveUp 6s linear forwards; /* Shake and upward movement */
+        }
+
+        /* Shake animation */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Rocket upward movement */
+        @keyframes moveUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+
+        .rocket img {
+            display: block;
+        }
+
+        /* Fire effect - placed below the rocket */
+        .fire {
+            position: absolute;
+            top: 100%; /* Place the fire below the rocket */
+            width: 30px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(255, 153, 0, 1) 0%, rgba(255, 0, 0, 1) 60%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 50%;
+            animation: fireAnimation 1s infinite;
+        }
+
+        .fire:nth-child(2) {
+            width: 25px;
+            height: 35px;
+            left: 5px;
+            animation: fireAnimation 1.5s infinite;
+        }
+
+        .fire:nth-child(3) {
+            width: 20px;
+            height: 30px;
+            left: 10px;
+            animation: fireAnimation 2s infinite;
+        }
+
+        /* Fire animation */
+        @keyframes fireAnimation {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(20px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+        }
+
+        .scene i {
+            position: absolute;
+            top: -50px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 2px;
+            animation: rain linear infinite;
+        }
+
+        /* Rain animation */
+        @keyframes rain {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .scene p {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body onload="rainEffect()">
+    <div class="scene">
+        <div class="rocket">
+            <img src="rocket.png" alt="Rocket" width="60px" height="120px">
+            <!-- Fire Effect below the rocket -->
+            <div class="fire"></div>
+            <div class="fire"></div>
+            <div class="fire"></div>
+        </div>
+        <p>Loading...</p> <!-- Loading text -->
+    </div>
+    <script>
+        function rainEffect() {
+            let count = 100; // Number of raindrops
+            let scene = document.querySelector('.scene');
+            let loadingText = document.querySelector('p'); // Select the loading text
+            let i = 0;
+
+            while (i < count) {
+                let rainDrop = document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerWidth); // Random horizontal position
+                let duration = Math.random() * 0.5 + 0.5; // Random speed
+                let height = Math.random() * 20 + 10; // Random height for raindrops
+
+                rainDrop.style.left = x + 'px';
+                rainDrop.style.width = '2px'; // Thin like raindrops
+                rainDrop.style.height = height + 'px';
+                rainDrop.style.animationDuration = duration + 's';
+                rainDrop.style.animationDelay = Math.random() * 2 + 's'; // Random delay for staggered effect
+
+                scene.appendChild(rainDrop);
+                i++;
+            }
+
+            // Hide the page and loading text after the rocket finishes launching
+            setTimeout(function() {
+                document.querySelector('.scene').style.display = 'none'; // Hide the entire scene
+                loadingText.style.display = 'none'; // Hide loading text after rocket finishes
+            }, 6000); // Hide after 6 seconds, when the rocket reaches the top
+        }
+    </script>
+</body>
+</html>

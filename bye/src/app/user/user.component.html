@@ -1,0 +1,114 @@
+<div class="user-form-container">
+  <h1>User Management</h1>
+
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" placeholder="Enter name" />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" placeholder="Enter email" />
+    </div>
+
+    <!-- Role -->
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <select id="role" formControlName="role" [disabled]="isAddingNewRole">
+        <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>
+      </select>
+      <button type="button" (click)="toggleAddNewRole()">
+        {{ isAddingNewRole ? 'Cancel Adding Role' : 'Add New Role' }}
+      </button>
+      <div *ngIf="isAddingNewRole">
+        <input formControlName="newRole" type="text" placeholder="Enter new role" />
+        <input formControlName="rank" type="number" placeholder="Enter rank" />
+      </div>
+    </div>
+
+    <!-- Department -->
+    <div class="form-group">
+      <label for="department">Department:</label>
+      <select id="department" formControlName="department" [disabled]="isAddingNewDepartment">
+        <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+      </select>
+      <button type="button" (click)="toggleAddNewDepartment()">
+        {{ isAddingNewDepartment ? 'Cancel Adding Department' : 'Add New Department' }}
+      </button>
+      <div *ngIf="isAddingNewDepartment">
+        <input formControlName="newDepartment" type="text" placeholder="Enter new department" />
+      </div>
+    </div>
+
+    <!-- Created At -->
+    <div class="form-group">
+      <label for="createdAt">Academic Year (e.g., 2023-2024):</label>
+      <input
+        id="createdAt"
+        formControlName="createdAt"
+        type="text"
+        placeholder="Enter academic year (e.g., 2023-2024)"
+      />
+      <div *ngIf="uploadForm.get('createdAt')?.invalid && uploadForm.get('createdAt')?.touched" class="error">
+        Academic year is required and must be in the format YYYY-YYYY.
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="form-group">
+      <label for="linkedinlink">Linkedurl:</label>
+      <input id="linkedinlink" type="text" formControlName="linkedinlink" placeholder="Enter linkedinlink" />
+    </div>
+    <!-- Image -->
+    <div class="form-group">
+      <label for="image">Upload Image:</label>
+      <input id="image" type="file" (change)="onFileSelect($event)" />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-actions">
+      <button type="submit" [disabled]="uploadForm.invalid">Submit</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="form-actions">
+      <button type="button" (click)="navigateToDashboard()">Go to Dashboard</button>
+    </div>
+  </form>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>
+<div class="roles-table-container">
+  <h2>Roles and Ranks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of rolesWithRank">
+        <td>{{ role.roleName }}</td>
+        <td>{{ role.rank }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="user-list">
+  <h2>Users</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      <div>
+        <strong>{{ user.username }}</strong> ({{ user.email }}) - Created: {{ user.createdAt | date:'shortDate' }}
+        <button (click)="deleteUser(user.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

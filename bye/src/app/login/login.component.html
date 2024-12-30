@@ -1,0 +1,20 @@
+<!-- frontend/src/app/login/login.component.html -->
+<div class="login-container">
+  <form (ngSubmit)="login()">
+    <div>
+      <label for="usernameOrEmail">Username or Email:</label>
+      <input type="text" id="usernameOrEmail" [(ngModel)]="usernameOrEmail" name="usernameOrEmail" required />
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
+    </div>
+    <button type="submit">Login</button>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+    <button (click)="navigateToSignup()">Signup</button>
+    
+      <button (click)="navigateToForgotPassword()">Forgot Password?</button>
+  </form>
+  
+</div>

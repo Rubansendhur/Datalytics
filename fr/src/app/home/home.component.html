@@ -1,0 +1,155 @@
+
+<!-- Header Section -->
+<!-- Home Component -->
+<div *ngIf="loading" class="loading-container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+
+  
+
+
+  
+ 
+</div>
+
+<!-- Hero Section -->
+<div *ngIf="!loading">
+
+<div class="hero-section">
+  <div class="hero-content">
+    <h1> Datalytics <br>The Exploratory Territory</h1>
+    <p>Join us in exploring the world of data analytics. Learn, grow, and contribute to the future of data.</p>
+    <a href="javascript:void(0)" class="btn btn-primary" (click)="navigateToaboutus()">Explore More</a>
+    <a href="javascript:void(0)" class="btn btn-secondary" (click)="navigateTocontactus()">Get in Touch</a>
+  </div>
+</div>
+
+<!-- About Us Section -->
+
+<div id="about-us" class="about-us-section">
+  <div class="about-us-content">
+    <div class="about-us-image">
+      <img src="frontabout.jpg" alt="Data Analytics">
+    </div>
+    <div class="about-us-text">
+      <div class="about-label">ABOUT DATALYTICS</div>
+      <h2>A Few Words About Us</h2>
+      <p>Datalytics is a registered club of Coimbatore Institute of Technology, initiated for enlightening the knowledge of students in the field of data science. Our aim is to provide you:</p>
+      <ul>
+        <li>Quality research & analysis</li>
+        <li>Business advisory experience</li>
+        <li>Realtime experience with data.</li>
+      </ul>
+      <a href="https://www.cit.edu.in/club/datalytics-club" class="btn-read-more">Read more</a>
+    </div>
+  </div>
+</div>
+<div id="events" class="events-section">
+  <h1>Upcoming Events</h1>
+  <div class="event-cards">
+    <div class="event-card" *ngFor="let event of filteredEvents | slice: 0:2" (click)="viewEventDetails(event._id)">
+      <div *ngIf="event.image_url">
+        <img [src]="event.image_url" alt="{{ event.event_name }}" class="event-image" />
+      </div>
+      <div class="event-info">
+        <h3>{{ event.event_name }}</h3>
+          </div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" class="btn btn-secondary" (click)="goToEventsPage()">Explore All Events</a>
+</div>
+
+<!-- What We Do Section -->
+<div id="what-we-do" class="what-we-do-section">
+  <h2>What are the skills we need?</h2>
+  <div class="skills-label">DATA SCIENCE</div>
+  <div class="what-we-do-cards">
+    
+    <div class="what-we-do-card">
+      <img src="https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGF0YSUyMGFuYWx5c2lzfGVufDB8fDB8fHww" alt="Data Visualization">
+      <h3>Data Visualization</h3>
+      <p>Graphical representation of information and data.</p>
+    </div>
+    <div class="what-we-do-card">
+      <img src="https://media.istockphoto.com/id/1312471020/photo/financial-paper-with-charts-and-diagrams-on-gray-table.jpg?s=612x612&w=0&k=20&c=-am_W8-QAkWfcHFKZv-Eoff7Nuyu2Mdr4wS8-G7nobk=" alt="Data Intuition">
+      <h3>Data Intuition</h3>
+      <p>Better understanding of data.</p>
+    </div>
+    <div class="what-we-do-card">
+      <img src="https://media.istockphoto.com/id/1454372869/vector/data-analysis-chart-graph-3d-statistics-background.jpg?s=612x612&w=0&k=20&c=n2Vz6dpQ4EUwJwOhkX2YjMWX_dx2x_ZjPsERnejS1Jc=" alt="Data Wrangling">
+      <h3>Data Wrangling</h3>
+      <p>Process of transforming and mapping data.</p>
+    </div>
+    <div class="what-we-do-card">
+      <img src="https://media.istockphoto.com/id/1485774126/photo/3d-minimal-calculator-with-a-statistic-graph-paper-data-analysis-concept-3d-illustration.jpg?s=612x612&w=0&k=20&c=fdBHrAgj7PnCklJqSBCj1c2316Y6mMYoi9UgBUJTHfM=" alt="Statistics">
+      <h3>Statistics</h3>
+      <p>Dealing with collection, analysis, and interpretation of numerical data.</p>
+    </div>
+    <div class="what-we-do-card">
+      <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Machine Learning">
+      <h3>Machine Learning</h3>
+      <p>An application of AI that learns and improves from experience.</p>
+    </div>
+    <div class="what-we-do-card">
+      <img src="https://images.unsplash.com/photo-1580894906475-403276d3942d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c29mdHdhcmUlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Software Engineering">
+      <h3>Software Engineering</h3>
+      <p>Design, development, and maintenance of software.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Events Section -->
+
+
+
+<!-- Team Section -->
+<div id="team" class="team-section">
+  <h2>Meet Our Team</h2>
+  <div class="slider">
+    <div
+      class="slider-container"
+      [style.transform]="sliderTransform"
+      [style.transition]="'transform 0.5s ease-in-out'"
+    >
+      <div class="team-card" *ngFor="let member of team" (click)="navigateToUserDetail(member._id)">
+        <ng-container *ngIf="member.image_url; else altText">
+          <img
+            [src]="member.image_url"
+            alt="{{ member.name }}"
+            class="user-img"
+          />
+        </ng-container>
+        <ng-template #altText>
+          <div class="placeholder-img">No Image</div>
+        </ng-template>
+        <div class="member-info">
+          <p>{{ member.name }}</p>
+          <p>{{ member.email }}</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn left" (click)="prevSlide()">‹</button>
+    <button class="slider-btn right" (click)="nextSlide()">›</button>
+  </div>
+  <a href="javascript:void(0)" class="btn btn-secondary" (click)="goToMembersPage()">View All Team Members</a>
+</div>
+
+
+<!-- Contact Us Section -->
+<div id="contact-us" class="contact-us-section">
+  <h2>Contact Us</h2>
+  <p>
+    Email: <a href="datalyticscit&#64;gmail.com">datalyticscit&#64;gmail.com</a> | 
+    Phone: <a href="tel:+91 8610098083">+91 8610098083</a> | 
+    LinkedIn: <a href="https://www.linkedin.com/company/datalyticscit/?originalSubdomain=in" target="_blank">Datalytics CIT</a> | 
+    Instagram: <a href="https://www.instagram.com/datalytics.cit/" target="_blank">&#64;datalytics.cit</a>
+  </p>
+</div>
+
+</div>

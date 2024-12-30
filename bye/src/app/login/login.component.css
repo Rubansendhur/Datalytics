@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Full viewport height */
+  }
+  
+/* Container for the form */
+.login-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+/* Input fields styling */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+/* Labels styling */
+.login-container label {
+    font-size: 14px;
+    text-align: left;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+/* Submit button */
+.login-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+.login-container button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+/* Error and success message styles */
+.login-container .error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+.login-container .success {
+    color: #5bc0de;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+/* Buttons for Signup and Forgot Password */
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+.login-container button:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .login-container input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-container button[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* For larger screens (laptops) */
+@media (min-width: 769px) {
+    .login-container {
+        padding: 40px;
+        width: 400px;
+        margin: 0 auto; /* Ensure it is centered horizontally on larger screens */
+    }
+}

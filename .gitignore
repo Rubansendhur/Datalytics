@@ -1,0 +1,44 @@
+# Angular specific files
+/dist/
+/out-tsc/
+/node_modules/
+/tmp/
+/coverage/
+*.log
+
+# IDE and editor settings
+/.idea/
+/.vscode/
+/.editorconfig
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Angular cache
+.angular/cache
+
+# Production build files
+/build/
+
+# Dependency directories and files
+package-lock.json
+yarn.lock
+
+# Environment files
+src/environments/environment.*.ts
+
+# Miscellaneous
+npm-debug.log*
+yarn-error.log
+# Ignore node_modules
+node_modules/
+
+# Ignore environment files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+.DS_Store

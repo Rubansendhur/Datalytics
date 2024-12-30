@@ -1,0 +1,55 @@
+
+<div *ngIf="loading" class="loading-container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+
+  
+
+
+  
+ 
+</div>
+<div *ngIf="!loading">
+  <div class="event-details" *ngIf="event; else loadingOrError">
+  <!-- Image Section -->
+  <div class="event-image" *ngIf="event.image_url">
+    <img [src]="event.image_url" alt="Event Image" />
+  </div>
+
+  <!-- Details Section -->
+  <div class="event-info">
+    <h1>Event Details</h1>
+    <p><strong>Event Name:</strong> {{ event.event_name }}</p>
+    <p><strong>Event Date:</strong> {{ event.event_time | date: 'fullDate' }}</p>
+    <p><strong>Event Time:</strong> {{ event.event_time | date: 'shortTime' }}</p>
+    <p><strong>Location:</strong> {{ event.event_location }}</p>
+      </div>
+</div>
+
+<!-- Description Section -->
+<div class="event-Coordinator" *ngIf="event">
+  <strong>Event Coordinator:</strong>
+  <p>
+    <span *ngFor="let line of formatEventCoordinator(event.event_speaker)">
+      {{ line }}
+      <br />
+    </span>
+  </p>
+</div>
+
+<div class="event-description" *ngIf="event">
+  <strong>Description:</strong>
+  <p>{{ event.description }}</p>
+</div>
+
+<ng-template #loadingOrError>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p *ngIf="!errorMessage">Loading event details...</p>
+</ng-template>
+</div>

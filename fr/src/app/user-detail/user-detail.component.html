@@ -1,0 +1,54 @@
+<div *ngIf="loading" class="loading-container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+
+  
+
+
+  
+ 
+</div>
+<div *ngIf="!loading">
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="userDetails" class="user-details">
+  <img [src]="userDetails.image_url" alt="User Image" width="150" />
+
+  <div class="user-info">
+    <h2>User Details</h2>
+
+    <p>
+      <strong>Name:</strong> {{ userDetails.name }}
+    </p>
+
+    <p>
+      <strong>Email:</strong> {{ userDetails.email }}
+    </p>
+
+    <p>
+      <strong>Role:</strong> {{ userDetails.role }}
+    </p>
+
+    <p>
+      <strong>Department:</strong> {{ userDetails.department }}
+    </p>
+    <div id="linkedin-button-container">
+      <!-- Smaller Image Button -->
+      <a [href]="userDetails.linkedinlink" target="_blank" id="linkedin-link">
+        <button id="linkedin-button">
+          <img src="download.png" alt="LinkedIn Button" id="linkedin-image" />
+        </button>
+      </a>
+    </div>
+    
+  </div>
+</div>
+</div>

@@ -1,0 +1,796 @@
+/* Right-Aligned Button */
+.header .cta-button {
+  margin-left: auto; /* Pushes the button to the far right */
+  background-color: #808080; /* Changed to grey */
+  color: white;
+  padding: 30px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Updated font family */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.header .cta-button:hover {
+  background-color: #696969; /* Darker grey on hover */
+  transform: translateY(-2px); /* Slight elevation effect */
+}
+button {
+  background-color: transparent; /* Transparent background to highlight the image */
+  border: none; /* Remove the border */
+  cursor: pointer; /* Pointer cursor for clickable button */
+  padding: 0; /* Remove padding around the button */
+  margin: 0; /* Remove margin */
+  display: flex; /* Ensure proper alignment of image if additional content is added */
+  justify-content: center; /* Center-align the image */
+  align-items: center; /* Vertically align the image */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover and active effects */
+}
+
+button img {
+  width: 40px; /* Set the desired width of the image */
+  height: 40px; /* Set the desired height of the image */
+  border-radius: 50%; /* Make the image circular (optional) */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+button:hover img {
+  transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+button:active img {
+  transform: scale(0.9); /* Slightly shrink the image on click */
+}
+
+button:focus {
+  outline: none; /* Remove the focus outline */
+}
+
+button:focus-visible {
+  outline: 2px solid #3498db; /* Add a focus outline for accessibility */
+  border-radius: 50%; /* Match the image's circular shape */
+}
+
+.header .cta-button:active {
+  transform: translateY(0); /* Reset elevation on click */
+  background-color: white; /* Even darker grey on active */
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* Gray background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.logo img {
+  height: 60px;
+  width: auto;
+  max-width: 250px;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  display: inline-block;
+}
+
+.nav ul li a {
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-family: 'Roboto', sans-serif; /* Updated font family */
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav ul li a:hover {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.nav ul button {
+  background-color: white; /* Default grey background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Consistent font */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer {
+  background-color: #beb6b6;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact,
+.footer-contributors {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.footer-links ul,
+.footer-contributors ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-contributors ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a,
+.footer-contact a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+.btn-signin {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+.footer {
+  display: flex; /* Arrange items horizontally */
+  justify-content: center; /* Center the button horizontally */
+  align-items: center; /* Center the button vertically */
+  padding: 20px; /* Add some padding around the footer */
+  background-color: #f4f4f4; /* Light gray background color */
+}
+
+.footer button {
+  background-color: transparent; /* Transparent background for the button */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Show pointer cursor on hover */
+  padding: 0; /* Remove padding around the button */
+  margin: 0; /* Remove margin */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover and active effects */
+}
+
+.footer button img {
+  width: 100px; /* Set the width of the image */
+  height: 100px; /* Set the height of the image */
+  border-radius: 50%; /* Make the image circular */
+  transition: transform 0.3s ease; /* Smooth animation on hover */
+}
+
+.footer button:hover img {
+  transform: scale(1.2); /* Enlarge the image on hover */
+}
+
+.footer button:active img {
+  transform: scale(1.1); /* Slightly shrink the image when clicked */
+}
+
+.footer button:focus {
+  outline: none; /* Remove the focus outline */
+}
+
+.footer button:focus-visible {
+  outline: 3px solid #3498db; /* Add a visible outline for accessibility */
+  border-radius: 50%; /* Match the circular shape of the image */
+}
+a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+  display: inline-block;
+}
+
+a:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+.footer1 {
+  background-color: #1c1c2e;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content1 a {
+  color: #4caf50; /* Highlight color for links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-content1 a:hover {
+  color: #34a853; /* Slightly brighter green on hover */
+}
+/* Container to hold both the button and the description */
+.logo-container {
+  display: flex;
+  flex-direction: column; /* Stack button and paragraph vertically */
+  align-items: center; /* Center the items horizontally */
+  justify-content: center;
+  text-align: center; /* Ensure the text is centered below the button */
+  padding: 10px; /* Add some padding */
+}
+
+/* Logo styling */
+.logo {
+  width: 100px; /* Set the size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between the logo and the description */
+}
+
+/* Description styling */
+.club-description {
+  font-size: 1.1em; /* Set the font size for the description */
+  color: #333; /* Set the text color */
+  margin-top: 10px; /* Add space above the description */
+}
+/* Loading Container */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Style for the social icons container */
+.footer-contact {
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-contact h3 {
+  margin-bottom: 15px;
+}
+
+.footer-contact .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-contact .social-icons a {
+  color: rgb(82, 82, 82);  /* Set icon color to black */
+  font-size: 30px;  /* Adjust size of the icons */
+  text-decoration: none;  /* Remove underline from links */
+  transition: color 0.3s ease;  /* Smooth color change on hover */
+}
+
+.footer-contact .social-icons a:hover {
+  color: #3d3c3c;  /* Darken the color slightly on hover */
+}
+
+.footer-contact .social-icons i {
+  display: inline-block;
+}
+/* Base styling for navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hide off-screen by default */
+  height: 100vh; /* Full height */
+  width: 250px; /* Sidebar width */
+  background-color: #f8f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: right 0.3s ease; /* Smooth transition for slide-in */
+  z-index: 1000;
+}
+
+.nav-list li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.nav-list a:hover {
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Show menu when 'open' class is added */
+.nav-list.open {
+  right: 0; /* Slide into view */
+}
+
+/* Hamburger button */
+.hamburger {
+  display: block;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Hide hamburger on large screens */
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-list {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .nav-list li {
+    margin: 0 10px;
+  }
+}
+/* Base footer styling */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap sections for smaller screens */
+  justify-content: center;
+  gap: 20px; /* Add space between sections */
+}
+
+/* Footer sections */
+.footer-links, .contact-section, .footer-contact, .footer-contributors {
+  flex: 1 1 300px; /* Each section takes full width on small screens */
+  margin: 10px 0;
+}
+
+.footer-links ul, .footer-contributors ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .footer-contributors li {
+  margin: 5px 0;
+}
+
+.footer-links a, .footer-contact a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-section address {
+  font-style: normal;
+  margin: 10px 0;
+}
+
+.contact-section a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #ccc;
+}
+
+/* Footer Bottom Section */
+.footer1 {
+  background-color: #222;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align content */
+  }
+
+  .footer-links, .contact-section, .footer-contact, .footer-contributors {
+    text-align: center; /* Center-align text for small screens */
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px;
+  }
+
+  .footer-links ul, .footer-contributors ul {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .social-icons a {
+    font-size: 20px; /* Slightly reduce icon size */
+  }
+
+  .footer1 {
+    font-size: 12px;
+  }
+}
+/* General Footer Styling */
+.footer {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Centers all content */
+}
+
+.footer-logo {
+  order: -1; /* Logo is first in all views */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo .logo {
+  width: 120px; /* Adjust logo size */
+  display: block;
+  margin: 0 auto;
+}
+
+.footer-menu, .contact-section, .social-icons, .footer-contributors {
+  margin-bottom: 20px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.footer-menu li {
+  margin: 5px 0;
+}
+
+.footer-menu a {
+  color: #070606;
+  text-decoration: none;
+}
+
+.footer-menu a:hover {
+  text-decoration: underline;
+}
+
+.contact-section address {
+  font-style: normal;
+  margin: 10px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: rgb(63, 56, 56);
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* Laptop View */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 30px;
+  }
+
+  .footer-menu ul {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+/* Tablet and Mobile View */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-menu ul {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .footer-logo .logo {
+    width: 100px; /* Adjust logo size for smaller screens */
+  }
+
+  .footer-menu li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo .logo {
+    width: 80px; /* Further reduce logo size for smaller screens */
+  }
+
+  .footer-menu ul {
+    font-size: 14px;
+  }
+}
+/* For Mobile View */
+/* For Mobile View */
+/* For Mobile View */
+@media (max-width: 500px) {
+  .footer1 {
+    padding: 20px; /* Add padding for spacing */
+    background-color: #333; /* Optional: Add background color */
+    text-align: center; /* Center align text */
+  }
+
+  .footer-content {
+    max-width: 250px; /* Reduce the width further for mobile view */
+    margin: 0 auto; /* Center the content horizontally */
+  }
+
+  .footer-content p {
+    font-size: 12px; /* Decrease font size for mobile */
+    color: #fff; /* White text color for contrast */
+    margin: 0; /* Remove default margin */
+  }
+}
+
+/* General Styles */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.footer-links, .contact-section, .footer-contact, .footer-contributors {
+  flex: 1;
+  min-width: 200px; /* Ensure elements shrink gracefully */
+}
+
+.footer h3, .footer h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+  font-size: 14px;
+}
+
+/* Social Icons */
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Contributors Section */
+.footer-contributors ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-links ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer h3, .footer h2 {
+    font-size: 16px;
+  }
+
+  .footer p, .footer a {
+    font-size: 12px;
+  }
+
+  .social-icons a {
+    font-size: 16px;
+  }
+
+  .footer-contributors ul {
+    font-size: 12px;
+  }
+
+  address, .contact-email {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+/* Default styling for the footer */
+.footer1 {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.footer-content {
+  margin: 0 auto;
+  font-size: 16px; /* Default font size */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .footer1 {
+    padding: 10px;
+    width: 95%;
+    height: 100%; /* Adjusts dynamically based on content */
+  }
+
+  .footer-content {
+    font-size: 14px; /* Slightly smaller font size for mobile */
+  }
+}
+/* Default footer styling */
+.footer1 {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  text-align: center;
+  padding: 20px;
+  width: 97%; /* Full width by default */
+  height: auto; /* Adjust dynamically based on content */
+}
+
+/* Laptop view adjustments */
+@media(max-width: 1024px) {
+  .footer1 {
+    width: 93%; /* Reduce width to 80% for laptops */
+    margin: 0 auto; /* Center the footer horizontally */
+  }
+}

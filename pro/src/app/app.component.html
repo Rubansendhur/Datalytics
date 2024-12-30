@@ -1,0 +1,31 @@
+<div class="signup-container">
+  <h1>Signup</h1>
+
+  <form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)">
+    <div *ngIf="!otpSent">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
+
+      <button type="submit" [disabled]="signupForm.invalid">Send OTP</button>
+    </div>
+  </form>
+
+  <div *ngIf="otpSent">
+    <h2>Verify OTP</h2>
+    <label for="otp">Enter OTP:</label>
+    <input type="text" id="otp" [(ngModel)]="otp" name="otp" required />
+
+    <button (click)="onVerifyOtp()">Verify OTP</button>
+    <div *ngIf="otpSent">OTP has been sent to your email.</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+<div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+    <p *ngIf="otpError" class="error">Invalid OTP. Please try again.</p>
+  </div>
+</div>

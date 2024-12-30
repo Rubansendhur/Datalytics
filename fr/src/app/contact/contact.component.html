@@ -1,0 +1,82 @@
+
+
+<div class="footer-contact">
+  <div class="footer-text">
+    <h1>Our Office</h1>
+    <h2>Datalytics club at Coimbatore Institute Of Technology.</h2>
+    <h1>Location</h1>
+    <h3>Avinashi Rd, Civil Aerodrome Post, Peelamedu, Coimbatore, Tamil Nadu 641014</h3>
+    <h4>Email: <a href="mailto:datalyticscit@gmail.com">datalyticscit&#64;gmail.com</a></h4>
+    <h4>Phone: <a href="tel:+918610098083">+91 8610098083</a></h4>
+  </div>
+  <div class="iframe-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15664.568429651676!2d77.027245!3d11.027963!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857e53358e505%3A0xb0dd7f406ef28635!2sDatalytics%20club!5e0!3m2!1sen!2sin!4v1734183241753!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    
+</div>
+
+
+  
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          class="form-control"
+          placeholder="Your Name"
+          required
+        />
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          class="form-control"
+          placeholder="Your Email"
+          required
+        />
+        <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="text-danger">
+          <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</span>
+          <span *ngIf="contactForm.get('email')?.errors?.['email']">Enter a valid email.</span>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          class="form-control"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="text-danger">
+          Message is required.
+        </div>
+      </div>
+    
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!contactForm.valid || isLoading" 
+      >
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span *ngIf="!isLoading">Send Message</span>
+      </button>
+    
+      <div *ngIf="statusMessage" class="status-message">
+        <p>{{ statusMessage }}</p>
+      </div>
+    </form>
+    
+      </div>

@@ -1,0 +1,7 @@
+<div *ngFor="let event of events" class="event">
+    <h2>{{ event.event_name }}</h2>
+    <p>{{ event.description }}</p>
+    <p><strong>Event Time:</strong> {{ event.event_time }}</p>
+    <img *ngIf="event.image_url" [src]="event.image_url" alt="Event Image" />
+  </div>
+  

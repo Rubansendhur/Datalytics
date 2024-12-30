@@ -1,0 +1,73 @@
+
+<div *ngIf="loading" class="loading-container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+
+  
+
+
+  
+ 
+</div>
+<div *ngIf="!loading">
+<div class="container">
+  <h1>User Management</h1>
+
+  <!-- Year Range Selection -->
+  <div>
+    <select
+      id="yearRange"
+      [(ngModel)]="selectedYearRange"
+      (change)="onYearRangeChange()"
+    >
+      <option value="" disabled>Select a range</option>
+      <option *ngFor="let range of yearRanges" [value]="range">
+        {{ range }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Users List -->
+  <div *ngIf="users.length > 0">
+  
+    
+    <!-- User Cards -->
+    <div class="user-cards-container">
+      <div *ngFor="let user of users" class="user-card" (click)="navigateToUserDetail(user._id)">
+        <img
+          [src]="user.image_url"
+          alt="{{ user.name }}"
+          class="user-img"
+        />
+        <div class="user-details">
+          <h3>{{ user.name }}</h3>
+          <p>Role: {{ user.role }}</p>
+          
+        </div>
+        <!-- Delete button visible if the year range's delete button is not hidden -->
+        
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Close button to hide delete button for the current selected year range -->
+  
+
+  <!-- No Users Message -->
+  <div *ngIf="users.length === 0 && !errorMessage">
+    
+  </div>
+</div>
+</div>

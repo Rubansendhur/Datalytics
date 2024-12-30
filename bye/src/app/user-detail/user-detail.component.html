@@ -1,0 +1,23 @@
+<div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="userDetails">
+    <h2>User Details</h2>
+    <img [src]="userDetails.image_url" alt="User Image" width="150" />
+    <p><strong>Name:</strong> {{ userDetails.name }}</p>
+    <p><strong>Email:</strong> {{ userDetails.email }}</p>
+    <p><strong>Role:</strong> {{ userDetails.role }}</p>
+    <p><strong>Department:</strong> {{ userDetails.department }}</p>
+    
+    <div>
+      <!-- Smaller Image Button -->
+      <a [href]="userDetails.linkedinlink" target="_blank" class="linkedin-button-link">
+        <button class="linkedin-button">
+          <img src="download.png" alt="LinkedIn Button" class="linkedin-image" />
+        </button>
+      </a>
+    </div>
+    
+  </div>
+  

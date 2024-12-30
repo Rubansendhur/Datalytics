@@ -1,0 +1,8 @@
+.user-img {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    object-fit: cover; /* Ensures the image is scaled and cropped to fit */
+    border-radius: 50%; /* Optional: Makes the image circular */
+    border: 1px solid #ccc; /* Optional: Adds a border for aesthetics */
+  }
+  

@@ -1,0 +1,16 @@
+.event-item {
+    margin-bottom: 20px;
+  }
+  
+  .event-image {
+    max-width: 10%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+  }
+  

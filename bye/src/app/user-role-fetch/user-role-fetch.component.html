@@ -1,0 +1,60 @@
+<div class="container">
+  <h1>User Management</h1>
+
+  <!-- Year Range Selection -->
+  <div>
+    <label for="yearRange">Select Year Range:</label>
+    <select
+      id="yearRange"
+      [(ngModel)]="selectedYearRange"
+      (change)="onYearRangeChange()"
+    >
+      <option value="" disabled>Select a range</option>
+      <option *ngFor="let range of yearRanges" [value]="range">
+        {{ range }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Users List -->
+  <div *ngIf="users.length > 0">
+    <h2>Users</h2>
+    
+    <!-- User Cards -->
+    <div class="user-cards-container">
+      <div *ngFor="let user of users" class="user-card" (click)="navigateToUserDetail(user._id)">
+        <img
+          [src]="user.image_url"
+          alt="{{ user.name }}"
+          class="user-img"
+        />
+        <div class="user-details">
+          <h3>{{ user.name }}</h3>
+          <p>Email: {{ user.email }}</p>
+          <p>Role: {{ user.role }}</p>
+          <p>Department: {{ user.department }}</p>
+          
+        </div>
+        <!-- Delete button visible if the year range's delete button is not hidden -->
+        <button *ngIf="!categorizedUsers[selectedYearRange]?.hidden" (click)="deleteUser(user._id)" class="delete-btn">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Close button to hide delete button for the current selected year range -->
+  <div *ngIf="selectedYearRange">
+    <button (click)="closeYearView(selectedYearRange)">Close/Delete Button</button>
+  </div>
+
+  <!-- No Users Message -->
+  <div *ngIf="users.length === 0 && !errorMessage">
+    <p>No users found for the selected year range.</p>
+  </div>
+</div>

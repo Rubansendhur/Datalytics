@@ -1,0 +1,56 @@
+.user-img {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    object-fit: cover; /* Ensures the image is scaled and cropped to fit */
+    border-radius: 50%; /* Optional: Makes the image circular */
+    border: 1px solid #ccc; /* Optional: Adds a border for aesthetics */
+  }
+  .user-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+    margin-right: 2rem;
+  }
+  
+  .roles-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
+    margin-left: auto;
+  }
+  
+ 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  td {
+    background-color: #fff;
+  }
+  
+  .roles-table-container {
+    position: absolute;
+    top: 50px; /* Adjust to align with the form */
+    right: 30px; /* Space from the right edge */
+    max-width: 35%; /* Limit table width */
+  }
+  
+  .roles-table-container h2 {
+    text-align: center;
+  }
+  

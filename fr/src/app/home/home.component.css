@@ -1,0 +1,1068 @@
+/* Global Styles */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f4f4f9;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.team-card {
+  flex: 0 0 auto; /* Ensures cards are scrollable */
+  width: 300px; /* Fixed width for each card */
+  margin: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slider-btn.left {
+  left: 10px;
+}
+
+.slider-btn.right {
+  right: 10px;
+}
+
+.slider-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(225, 225, 225); /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.952); /* Slight shadow */
+  position: relative;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+}
+
+.logo img {
+  height: 80px; /* Increase the logo size */
+  max-width: 300px; /* Increase max width for logo */
+  margin-right: 500px; /* Move logo slightly to the right */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  display: inline-block;
+}
+
+.nav ul li a {
+  color: black; /* Make text black */
+  font-weight: bold; /* Bold text */
+  font-size: 18px; /* Increase font size */
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav ul li a:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white;
+  border-radius: 5px;
+}
+
+
+/* Hero Section */
+.hero-section {
+  background: url('/data-analytics.png') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content .btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 10px;
+}
+
+.hero-content .btn-primary {
+  background-color: #f28482;
+}
+.hero-content .btn-secondary {
+  background-color: #9a8c98;
+}
+.hero-content .btn-primary:hover {
+  background-color: #e57373;
+  transform: translateY(-3px);
+}
+
+
+
+.hero-content .btn-secondary:hover {
+  background-color: #6a5c6b;
+  transform: translateY(-3px);
+}
+/* About Us Section */
+.about-us-section {
+  background-color: rgb(15, 81, 173);
+  padding: 80px 40px; /* Added more padding to the section */
+  border-radius: 10px;
+}
+
+.about-us-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px; /* Increased max-width to accommodate the larger image */
+  margin: 0 auto;
+}
+
+.about-us-image {
+  flex: 1.5; /* Increased the image size */
+  padding-right: 50px;
+}
+
+.about-us-image img {
+  width: 100%;
+  height: 500px; /* Increased height to make the image larger */
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-text {
+  flex: 1.2; /* Reduced the text size in relation to the image */
+  padding-left: 40px;
+}
+
+.about-us-text h2 {
+  font-size: 2.8rem; /* Adjusted font size */
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about-us-text p {
+  font-size: 1.2rem; /* Adjusted font size */
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about-us-text ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.about-us-text ul li {
+  font-size: 1.2rem;
+  color: rgb(17, 6, 6);
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.about-us-text ul li:before {
+  content: "• ";
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.btn-read-more {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 14px 28px; /* Increased button padding */
+  border-radius: 10px; /* Made button larger */
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+  background-color: #0056b3;
+}
+
+.about-label {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #ffcc00;
+  color: black;
+  padding: 4px 12px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* What We Do Section */
+.what-we-do-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.what-we-do-section h2 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  color: #22223b;
+}
+
+.skills-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.what-we-do-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create a 3x3 grid */
+  gap: 30px;
+}
+
+.what-we-do-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.what-we-do-card:hover {
+  transform: translateY(-5px);
+}
+
+.what-we-do-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.what-we-do-card h3 {
+  font-size: 1.5em;
+  margin-top: 15px;
+  color: #333;
+}
+
+.what-we-do-card p {
+  font-size: 1.1em;
+  color: #666;
+  margin-top: 10px;
+}
+
+/*events section*/
+.events-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.event-cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-image {
+  width: 100%;
+  height: 180px; /* Adjust based on your need */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.event-info h3 {
+  font-size: 1.4em;
+  color: #333;
+  margin-top: 10px;
+}
+
+.event-info p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #666;
+}
+
+.btn-secondary {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.btn-secondary:hover {
+  background-color: #2980b9;
+}
+
+
+/* Team Section */
+.team-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-photo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.team-photo-alt {
+  width: 100%;
+  height: 180px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.team-photo-alt span {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.member-info {
+  padding: 15px 0;
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.member-info p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.btn-secondary {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #2980b9;
+}
+
+
+/* Contact Us Section */
+.contact-us-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgb(15, 81, 173);
+  border-radius: 10px;
+}
+
+.contact-us-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.contact-us-section p {
+  font-size: 1.2em;
+  color: #fcf8f8;
+  line-height: 1.6;
+}
+
+.contact-us-section a {
+  color: #e9ebed;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.contact-us-section a:hover {
+  color: #c44fc4;
+  text-decoration: underline;
+}
+
+.contact-us-section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.footer {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact,
+.footer-contributors {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.footer-links ul,
+.footer-contributors ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.footer-links ul li,
+.footer-contributors ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a,
+.footer-contact a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.btn-signin {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hero Section Animation */
+.hero-content h1, .hero-content p, .hero-content .btn {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* What We Do Cards */
+.what-we-do-card {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.what-we-do-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Events Section */
+.event-card {
+  animation: scaleUp 0.6s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+}
+
+/* Team Section */
+.team-card {
+  animation: fadeIn 0.5s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.loading-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 100vh;          /* Full viewport height */
+  width: 100vw;           /* Full viewport width (optional for full coverage) */
+  background-color: #f4f4f4; /* Background color */
+  margin: 0;              /* Remove any default margins */
+  padding: 0;             /* Remove any default paddings */
+  box-sizing: border-box; /* Ensure proper box-sizing */
+}
+
+
+
+/* Keyframes for Spinner Animation */
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: #ea4961;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  position: relative;
+  width: 75px;
+  height: 100px;
+}
+
+.loader__bar {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 50%;
+  background: #000000;
+  border-radius: 4px; /* Rounded edges for bars */
+  transform-origin: center bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Softer shadow for better trim */
+}
+
+.loader__bar:nth-child(1) {
+  left: 0px;
+  transform: scale(1, 0.2);
+  animation: barUp1 4s infinite;
+}
+
+.loader__bar:nth-child(2) {
+  left: 15px;
+  transform: scale(1, 0.4);
+  animation: barUp2 4s infinite;
+}
+
+.loader__bar:nth-child(3) {
+  left: 30px;
+  transform: scale(1, 0.6);
+  animation: barUp3 4s infinite;
+}
+
+.loader__bar:nth-child(4) {
+  left: 45px;
+  transform: scale(1, 0.8);
+  animation: barUp4 4s infinite;
+}
+
+.loader__bar:nth-child(5) {
+  left: 60px;
+  transform: scale(1, 1);
+  animation: barUp5 4s infinite;
+}
+
+.loader__ball {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border-radius: 50%; /* Ensure the ball remains circular */
+  animation: ball 4s infinite;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for the ball */
+}
+
+.loader-text {
+  margin-top: 15px; /* Adjust spacing below the bars */
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+}
+
+@keyframes ball {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(8px, -14px);
+  }
+  10% {
+    transform: translate(15px, -10px);
+  }
+  17% {
+    transform: translate(23px, -24px);
+  }
+  20% {
+    transform: translate(30px, -20px);
+  }
+  27% {
+    transform: translate(38px, -34px);
+  }
+  30% {
+    transform: translate(45px, -30px);
+  }
+  37% {
+    transform: translate(53px, -44px);
+  }
+  40% {
+    transform: translate(60px, -40px);
+  }
+  50% {
+    transform: translate(60px, 0);
+  }
+  57% {
+    transform: translate(53px, -14px);
+  }
+  60% {
+    transform: translate(45px, -10px);
+  }
+  67% {
+    transform: translate(37px, -24px);
+  }
+  70% {
+    transform: translate(30px, -20px);
+  }
+  77% {
+    transform: translate(22px, -34px);
+  }
+  80% {
+    transform: translate(15px, -30px);
+  }
+  87% {
+    transform: translate(7px, -44px);
+  }
+  90% {
+    transform: translate(0, -40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes barUp1 {
+  0% {
+    transform: scale(1, 0.2);
+  }
+  40% {
+    transform: scale(1, 0.2);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  90% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 0.2);
+  }
+}
+
+@keyframes barUp2 {
+  0% {
+    transform: scale(1, 0.4);
+  }
+  40% {
+    transform: scale(1, 0.4);
+  }
+  50% {
+    transform: scale(1, 0.8);
+  }
+  90% {
+    transform: scale(1, 0.8);
+  }
+  100% {
+    transform: scale(1, 0.4);
+  }
+}
+
+@keyframes barUp3 {
+  0% {
+    transform: scale(1, 0.6);
+  }
+  40% {
+    transform: scale(1, 0.6);
+  }
+  50% {
+    transform: scale(1, 0.6);
+  }
+  90% {
+    transform: scale(1, 0.6);
+  }
+  100% {
+    transform: scale(1, 0.6);
+  }
+}
+
+@keyframes barUp4 {
+  0% {
+    transform: scale(1, 0.8);
+  }
+  40% {
+    transform: scale(1, 0.8);
+  }
+  50% {
+    transform: scale(1, 0.4);
+  }
+  90% {
+    transform: scale(1, 0.4);
+  }
+  100% {
+    transform: scale(1, 0.8);
+  }
+}
+
+@keyframes barUp5 {
+  0% {
+    transform: scale(1, 1);
+  }
+  40% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.2);
+  }
+  90% {
+    transform: scale(1, 0.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@media (max-width: 768px) {
+  .what-we-do-section {
+    padding: 15px;
+  }
+
+  .what-we-do-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .what-we-do-card {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Optional: Add background for better contrast */
+  }
+
+  .what-we-do-card img {
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 10px; /* Center the image and add spacing below */
+    display: block;
+  }
+}@media (max-width: 768px) {
+  #contact-us {
+    display: none; /* Hide the Contact Us section in mobile view */
+  }
+}
+/* For Mobile View */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 20px;
+    text-align: center; /* Center align the text for better readability */
+  }
+
+  .team-section h2 {
+    font-size: 20px; /* Decrease the font size */
+    margin-bottom: 15px;
+  }
+
+  .slider {
+    display: block;
+    overflow: hidden; /* Hide overflow for smoother transitions */
+  }
+
+  .slider-container {
+    display: flex;
+    justify-content: center; /* Center the slider content */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .team-card {
+    width: 150px; /* Decrease width of team cards */
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+
+  .team-card img {
+    width: 100%;
+    height: auto;
+    max-width: 100px; /* Limit image width */
+    border-radius: 50%; /* Make images round */
+  }
+
+  .member-info p {
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .slider-btn {
+    font-size: 20px; /* Smaller buttons */
+    padding: 5px;
+  }
+
+  .btn-secondary {
+    font-size: 14px; /* Adjust size of the "View All Team Members" button */
+  }
+}
+/* For Mobile View */
+@media (max-width: 768px) {
+  #about-us {
+    padding: 20px;
+  }
+
+  .about-us-content {
+    display: block;
+    text-align: center; /* Center align the content */
+    width: 90%; /* Adjust the content width for better fit */
+    margin: 0 auto; /* Center the block content horizontally */
+  }
+
+  .about-us-image {
+    width: 100%; /* Ensure the image container takes full width */
+    margin-bottom: 20px; /* Add spacing below the image */
+  }
+
+  .about-us-image img {
+    width: 90%; /* Reduce image width for mobile view */
+    max-width: 300px; /* Limit the maximum size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: round corners */
+    margin: 0 auto; /* Center the image */
+  }
+
+  .about-us-text {
+    padding: 15px;
+    width: 87%; /* Adjust text width for mobile view */
+    margin: 0 auto; /* Center the text */
+  }
+
+  .about-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+
+  #about-us h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  #about-us p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  #about-us ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #about-us ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .btn-read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .btn-read-more:hover {
+    background-color: #0056b3;
+  }
+}
+.hero-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+.hero-content a {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Reduced size for mobile */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Reduced size for mobile */
+  }
+
+  .hero-content a {
+    font-size: 0.875rem; /* Reduced button text size */
+  }
+}

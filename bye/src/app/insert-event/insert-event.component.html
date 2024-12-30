@@ -1,0 +1,42 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <button (click)="navigateToDashboard()">Go to Dashboard</button>
+  <div>
+    <label for="event_name">Event Name:</label>
+    <input id="event_name" formControlName="event_name" type="text" required />
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description" required></textarea>
+  </div>
+  <div>
+    <label for="event_speaker">Co-ordinator</label>
+    <textarea id="event_speaker" formControlName="event_speaker" required></textarea>
+  </div>
+
+  <div>
+    <label for="event_time">Event Time:</label>
+    <input id="event_time" formControlName="event_time" type="datetime-local" required />
+  </div>
+
+  <div>
+    <label for="event_location">Event Location:</label>
+    <input id="event_location" formControlName="event_location" type="text" required />
+  </div>
+
+  <div>
+    <label for="image">Image:</label>
+    <input id="image" type="file" (change)="onFileSelect($event)" />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+<!-- src/app/gallery/gallery.component.html -->
+<div class="gallery">
+  <h1>Image Gallery</h1>
+  <div class="gallery-grid">
+    <!-- Loop through the imageUrls array and display each image -->
+    <div *ngFor="let url of imageUrls" class="gallery-item">
+      <img [src]="url" alt="Gallery Image" />
+    </div>
+  </div>
+</div>

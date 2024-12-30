@@ -1,0 +1,101 @@
+/* Basic reset for the dashboard */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  /* Style for the header */
+  .dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the description */
+  .dashboard p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the buttons */
+  .dashboard button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 250px; /* Restrict button width */
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .dashboard button:hover {
+    background-color: #0056b3;
+  }
+  
+  .dashboard button:focus {
+    outline: none;
+  }
+  
+  /* Responsive styles for mobile (small screens) */
+  @media (max-width: 600px) {
+    .dashboard {
+      padding: 10px;
+      height: auto;
+    }
+  
+    .dashboard h1 {
+      font-size: 1.8rem;
+    }
+  
+    .dashboard p {
+      font-size: 1rem;
+    }
+  
+    .dashboard button {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Responsive styles for tablet to desktop (medium screens) */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .dashboard {
+      padding: 20px;
+    }
+  
+    .dashboard h1 {
+      font-size: 2rem;
+    }
+  
+    .dashboard p {
+      font-size: 1.1rem;
+    }
+  
+    .dashboard button {
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Responsive styles for desktop (large screens) */
+  @media (min-width: 1024px) {
+    .dashboard {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .dashboard button {
+      width: auto;
+      margin: 10px;
+      font-size: 1.2rem;
+    }
+  }
+  

@@ -1,0 +1,74 @@
+<!-- signup.component.html -->
+<form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)" novalidate>
+    <div>
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        #usernameInput="ngModel"
+        required
+      />
+      <!-- Display validation error for username -->
+      <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
+        <div *ngIf="usernameInput.errors?.['required']" class="error-message">
+          Username is required.
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        #emailInput="ngModel"
+        required
+        email
+      />
+      <!-- Display validation error for email -->
+      <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+        <div *ngIf="emailInput.errors?.['required']" class="error-message">
+          Email is required.
+        </div>
+        <div *ngIf="emailInput.errors?.['email']" class="error-message">
+          Please enter a valid email address.
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        #passwordInput="ngModel"
+        required
+        minlength="6"
+      />
+      <!-- Display validation error for password -->
+      <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+        <div *ngIf="passwordInput.errors?.['required']" class="error-message">
+          Password is required.
+        </div>
+        <div *ngIf="passwordInput.errors?.['minlength']" class="error-message">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    <button (click)="navigateToLogin()">Login</button>
+    <div *ngIf="signupForm.invalid && (signupForm.dirty || signupForm.touched)" class="error-message">
+      Please fill out all fields correctly before submitting.
+    </div>
+  </form>
+  
+  <!-- Optionally display submitted data -->
+  
+  

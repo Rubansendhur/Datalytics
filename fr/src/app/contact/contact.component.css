@@ -1,0 +1,548 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Background with Animated Gradient */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #fddb92, #85ffbd);
+  background-size: 300% 300%;
+  animation: gradientBg 8s ease infinite;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Footer Contact Section */
+.footer-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 4px solid #4CAF50;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Animated Footer Text */
+.footer-text h1,
+.footer-text h2,
+.footer-text h3,
+.footer-text h4 {
+  margin-bottom: 10px;
+  animation: fadeInUp 1.2s ease both;
+}
+
+/* Text and Link Styling */
+.footer-text a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-text a:hover {
+  color: #85ffbd;
+}
+
+/* Animated Map */
+.footer-map iframe {
+  width: 100%;
+  height: 300px;
+  border: 3px solid #4CAF50;
+  border-radius: 8px;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Social Links Animation */
+.footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #4CAF50;
+  transform: scale(1.2);
+}
+
+/* Contact Form Container */
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  animation: bounceIn 1.5s ease;
+}
+
+/* Contact Form Header */
+.contact-container h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #4CAF50;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Form Group Animation */
+.form-group {
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Form Inputs and Labels */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  animation: slideInLeft 1s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  animation: pulse 2s infinite;
+}
+
+button:hover {
+  background: #45a049;
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  background: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Status Message */
+.status-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+/* Footer Contact Section */
+.footer-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 4px solid #4CAF50;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Animated Footer Text */
+.footer-text {
+  flex: 1;
+  max-width: 400px; /* Limit the text section width */
+}
+
+/* Text and Link Styling */
+.footer-text a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-text a:hover {
+  color: #85ffbd;
+}
+
+/* Larger Map Styling */
+.footer-map {
+  flex: 2; /* The map takes up more space */
+}
+
+.footer-map iframe {
+  width: 100%; /* Full width within its container */
+  height: 500px; /* Increased height for better visibility */
+  border: 3px solid #4CAF50;
+  border-radius: 12px;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .footer-contact {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    text-align: center;
+  }
+
+  .footer-map iframe {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+.iframe-container {
+  width: 100%;
+  max-width: 800px; /* Limit iframe width */
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add some shadow */
+  transition: all 0.5s ease; /* Smooth transition for scaling */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 300px; /* Default iframe height */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+}
+.loading-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 100vh;          /* Full viewport height */
+  width: 100vw;           /* Full viewport width (optional for full coverage) */
+  background-color: #f4f4f4; /* Background color */
+  margin: 0;              /* Remove any default margins */
+  padding: 0;             /* Remove any default paddings */
+  box-sizing: border-box; /* Ensure proper box-sizing */
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: #ea4961;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  position: relative;
+  width: 75px;
+  height: 100px;
+}
+
+.loader__bar {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 50%;
+  background: #000000;
+  border-radius: 4px; /* Rounded edges for bars */
+  transform-origin: center bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Softer shadow for better trim */
+}
+
+.loader__bar:nth-child(1) {
+  left: 0px;
+  transform: scale(1, 0.2);
+  animation: barUp1 4s infinite;
+}
+
+.loader__bar:nth-child(2) {
+  left: 15px;
+  transform: scale(1, 0.4);
+  animation: barUp2 4s infinite;
+}
+
+.loader__bar:nth-child(3) {
+  left: 30px;
+  transform: scale(1, 0.6);
+  animation: barUp3 4s infinite;
+}
+
+.loader__bar:nth-child(4) {
+  left: 45px;
+  transform: scale(1, 0.8);
+  animation: barUp4 4s infinite;
+}
+
+.loader__bar:nth-child(5) {
+  left: 60px;
+  transform: scale(1, 1);
+  animation: barUp5 4s infinite;
+}
+
+.loader__ball {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border-radius: 50%; /* Ensure the ball remains circular */
+  animation: ball 4s infinite;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for the ball */
+}
+
+.loader-text {
+  margin-top: 15px; /* Adjust spacing below the bars */
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+}
+
+@keyframes ball {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(8px, -14px);
+  }
+  10% {
+    transform: translate(15px, -10px);
+  }
+  17% {
+    transform: translate(23px, -24px);
+  }
+  20% {
+    transform: translate(30px, -20px);
+  }
+  27% {
+    transform: translate(38px, -34px);
+  }
+  30% {
+    transform: translate(45px, -30px);
+  }
+  37% {
+    transform: translate(53px, -44px);
+  }
+  40% {
+    transform: translate(60px, -40px);
+  }
+  50% {
+    transform: translate(60px, 0);
+  }
+  57% {
+    transform: translate(53px, -14px);
+  }
+  60% {
+    transform: translate(45px, -10px);
+  }
+  67% {
+    transform: translate(37px, -24px);
+  }
+  70% {
+    transform: translate(30px, -20px);
+  }
+  77% {
+    transform: translate(22px, -34px);
+  }
+  80% {
+    transform: translate(15px, -30px);
+  }
+  87% {
+    transform: translate(7px, -44px);
+  }
+  90% {
+    transform: translate(0, -40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes barUp1 {
+  0% {
+    transform: scale(1, 0.2);
+  }
+  40% {
+    transform: scale(1, 0.2);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  90% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 0.2);
+  }
+}
+
+@keyframes barUp2 {
+  0% {
+    transform: scale(1, 0.4);
+  }
+  40% {
+    transform: scale(1, 0.4);
+  }
+  50% {
+    transform: scale(1, 0.8);
+  }
+  90% {
+    transform: scale(1, 0.8);
+  }
+  100% {
+    transform: scale(1, 0.4);
+  }
+}
+
+@keyframes barUp3 {
+  0% {
+    transform: scale(1, 0.6);
+  }
+  40% {
+    transform: scale(1, 0.6);
+  }
+  50% {
+    transform: scale(1, 0.6);
+  }
+  90% {
+    transform: scale(1, 0.6);
+  }
+  100% {
+    transform: scale(1, 0.6);
+  }
+}
+
+@keyframes barUp4 {
+  0% {
+    transform: scale(1, 0.8);
+  }
+  40% {
+    transform: scale(1, 0.8);
+  }
+  50% {
+    transform: scale(1, 0.4);
+  }
+  90% {
+    transform: scale(1, 0.4);
+  }
+  100% {
+    transform: scale(1, 0.8);
+  }
+}
+
+@keyframes barUp5 {
+  0% {
+    transform: scale(1, 1);
+  }
+  40% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.2);
+  }
+  90% {
+    transform: scale(1, 0.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
