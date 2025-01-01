@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/",
+    "/Aboutus",
+    "/Contact",
+    "/Contactus",
+    "/Events"
+  ]
+}
